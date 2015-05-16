@@ -12,27 +12,31 @@
 
 <h:body>
 
-	<div id="menu">
-		<h1>Main Menu</h1>
+	<div id="menu" style="font-size:1.5em;">
 		<h:form>
-			<div>
-				<h:commandLink action="#{navigationController.findBooks()}" value="Find Books" />
-			</div>
-			<div>
-				<h:commandLink action="#{navigationController.myRentals()}" value="My Rentals" />
-			</div>
-			<div>
-				<h:commandLink action="#{navigationController.administration()}" value="Administration" />
-			</div>
-			<div>
-				<h:commandLink action="#{navigationController.profile()}" value="Profile" />
-			</div>
-			<div>
-				<h:commandLink action="#{navigationController.about()}" value="About" />
-			</div>
-			<div>
-				<h:commandLink action="#{securityBean.logout()}" value="Log Out" />
-			</div>
+			<h1>LibraryApp Demo</h1>
+			<h:commandLink style="padding: 10px 10px 10px 10px; float:right;" 
+							action="#{securityBean.logout()}" 
+							value="Log Out" />
+			<h4 style="float:right; padding:10px 10px 10px 10px;">Logged in as #{securityBean.userName}</h4>
+			
+			<h:outputLabel style="padding: 10px 10px 10px 10px;" 
+						  	value="Main Menu:" />
+			<h:commandLink style="padding: 10px 10px 10px 10px;" 
+							action="#{navigationController.findBooks()}" 
+							value="Find Books" />
+			<h:commandLink style="padding: 10px 10px 10px 10px;" 
+							action="#{navigationController.myRentals()}" 
+							value="My Rentals" />
+			<h:commandLink style="padding: 10px 10px 10px 10px;" 
+							action="#{navigationController.administration()}"
+							 value="Administration" />
+			<h:commandLink style="padding: 10px 10px 10px 10px;" 
+							action="#{navigationController.profile()}" 
+							value="Profile" />
+			<h:commandLink style="padding: 10px 10px 10px 10px;" 
+							action="#{navigationController.about()}" 
+							value="About" />
 		</h:form>
 	</div>
 	
