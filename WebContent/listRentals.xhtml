@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<title>My Rentals</title>
+</h:head>
+
+<h:body>
+
+	<!-- <ui:include src="commonSecure.xhtml" />  -->
+
+	<h1>My Rentals</h1>
+	
+	<h:form>
+
+	
+		<h:dataTable value="#{rentalController.items}" var="item">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Rental Status" />
+				</f:facet>
+				<h:outputText value="#{item.status}" />
+			</h:column>
+		</h:dataTable>
+		<br />
+	 
+	 
+	</h:form>
+		
+</h:body>
+</html>

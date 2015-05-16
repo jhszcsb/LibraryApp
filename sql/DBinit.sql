@@ -1,0 +1,37 @@
+DROP TABLE RENTAL;
+DROP TABLE BOOK;
+DROP TABLE USERS;
+
+CREATE TABLE USERS
+(
+	userid INT NOT NULL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	roles VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE BOOK
+(
+	bookid INT NOT NULL PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+	author VARCHAR(255) NOT NULL,
+	image BLOB NOT NULL,
+	contenttype VARCHAR(255) NOT NULL,
+	availablecopies INT NOT NULL
+);
+
+CREATE TABLE RENTAL
+(
+	rentalid INT NOT NULL PRIMARY KEY,
+	bookid INT NOT NULL,
+	userid INT NOT NULL,
+	rentaldate DATE NOT NULL,
+	returndate DATE NOT NULL,
+	status VARCHAR(255) NOT NULL,
+   FOREIGN KEY(userid) REFERENCES USERS(userid),
+   FOREIGN KEY(bookid) REFERENCES BOOK(bookid)
+);
+
+INSERT INTO USERS (USERID, NAME, PASSWORD, ROLES) 
+VALUES (1, 'Csabi', 'aaa', 'ADMIN'), (2, 'Lilla', 'bbb', 'CUSTOMER'), (3, 'Gergely', 'ccc', 'ADMIN'), (4, 'Melinda', 'ddd', 'CUSTOMER');
+
