@@ -8,27 +8,15 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<title>Log In</title>
 </h:head>
 
 <h:body>
-	
-	<ui:include src="publicMenu.xhtml" />
- 
- 	<div class="container">
-		<h1>Login</h1>
-		<form method="post" action="j_security_check">
-			<h:panelGrid columns="2">
-				<h:outputLabel value="Name" />
-				<input type="text" name="j_username" />
-				<h:outputLabel value="Password" />
-				<input type="password" name="j_password" />
-			</h:panelGrid>
-			<input type="submit" value="Login" />
-		</form>
-		
+
+	<div id="menu" style="font-size:1.5em;">
 		<h:form>
-			<h:commandLink action="#{navigationController.registration()}" value="Create New Account" />
+			<h1>LibraryApp Demo</h1>
+			
+			<h:commandLink action="a" value="Click here to see a list of available books without logging in" />
 		</h:form>
 	</div>
 		

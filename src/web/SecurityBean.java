@@ -33,4 +33,10 @@ public class SecurityBean implements Serializable {
 				.getExternalContext();
 		return ectx.isUserInRole(Users.ADMIN);
 	}
+	
+	public boolean isCustomer() {
+		ExternalContext ectx = FacesContext.getCurrentInstance()
+				.getExternalContext();
+		return ectx.isUserInRole(Users.CUSTOMER);
+	}
 }
