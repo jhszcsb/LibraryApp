@@ -69,5 +69,9 @@ public class Rental implements Serializable {
 	public Book getBook() {
 		return book;
 	}
+	
+	public Users getUser() {
+		return users;
+	}
 
 }

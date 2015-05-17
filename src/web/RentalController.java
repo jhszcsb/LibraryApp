@@ -55,5 +55,32 @@ public class RentalController implements Serializable {
 		// TODO: implement -> does the current user have an ongoing rental for this book?
 		return true;
 	}
+	
+	public void changeStatusToReceivable(Rental item) {
+		item.setStatus(Status.RECEIVABLE.getValue());
+		facade.edit(item);
+	}
+	
+	public void changeStatusToRented(Rental item) {
+		item.setStatus(Status.RENTED.getValue());
+		facade.edit(item);
+	}
+	
+	public void changeStatusToReturned(Rental item) {
+		item.setStatus(Status.RETURNED.getValue());
+		facade.edit(item);
+	}
+	
+	public boolean isRequested(Rental item) {
+		return item.getStatus().equals("REQUESTED");	// TODO: get the status from enum
+	}
+	
+	public boolean isReceivable(Rental item) {
+		return item.getStatus().equals("RECEIVABLE");
+	}
+	
+	public boolean isRented(Rental item) {
+		return item.getStatus().equals("RENTED");
+	}
 
 }

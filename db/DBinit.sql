@@ -46,3 +46,6 @@ VALUES (1, 'Csabi', 'aaa', 'ADMIN'), (2, 'Lilla', 'bbb', 'CUSTOMER'), (3, 'Gerge
 INSERT INTO USERS_ROLES (USERS_NAME, ROLES)
 VALUES ('Csabi', 'ADMIN'), ('Lilla', 'CUSTOMER'), ('Gergely', 'ADMIN'), ('Melinda', 'CUSTOMER');
 
+INSERT INTO RENTAL (RENTALID, BOOKID, USERNAME, RENTALDATE, RETURNDATE, STATUS)
+VALUES (1, 1, 'Lilla', '2015-01-01', '2015-01-01', 'REQUESTED'), (2, 1, 'Lilla', '2015-01-01', '2015-01-01', 'RECEIVABLE'), (3, 1, 'Gergely', '2015-05-10', '2015-05-10', 'RENTED');
+
