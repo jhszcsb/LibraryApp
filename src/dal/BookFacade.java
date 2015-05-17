@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.security.DeclareRoles;
+import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -38,7 +39,7 @@ public class BookFacade extends AbstractFacade<Book> {
 	*/
 	
 	@Override
-	@RolesAllowed({Users.CUSTOMER, Users.ADMIN})
+	@PermitAll
 	public List<Book> findAll() {
 		return super.findAll();
 	}
@@ -52,8 +53,7 @@ public class BookFacade extends AbstractFacade<Book> {
 		
 		if(!result.isEmpty()) {															// debug
 			System.out.println(result.get(0).getAuthor() + result.get(0).getName());	// debug
-		}
-		// debug
+		}																				// debug
 		return result;
 	}
 

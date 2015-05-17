@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import entity.Book;
 import entity.Rental;
 import entity.Users;
 
@@ -40,6 +41,13 @@ public class RentalFacade extends AbstractFacade<Rental> {
 	@Override
 	public List<Rental> findAll() {
 		return super.findAll();
+	}
+
+	public List<Rental> findForCustomer(String userName) {
+		// TODO: use named query?
+		String query = "from Rental r where r.users.name = :userName";
+		List<Rental> result = em.createQuery(query).setParameter("userName", userName).getResultList();		
+		return result;
 	}
 
 }

@@ -17,46 +17,74 @@
 	 
 	 <div style="width:1000px; height: 500px; border:solid; border-width:5px">
 	 	<h2>Administration</h2>
-	 	
+	 	<br/><br/>
+	 	<h4>Rentals</h4>
 	 	<h:form>
-		 	<br/><br/><br/>
-		 	<h:dataTable value="#{rentalController.items}" var="item">
-		 		<h:column>
-		 			<f:facet name="header">
-						<h:outputText value="User" />
-					</f:facet>
-					<h:outputText value="#{item.user.name}" />
-		 		</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Name" />
-					</f:facet>
-					<h:outputText value="#{item.book.name}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Author" />
-					</f:facet>
-					<h:outputText value="#{item.book.author}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Status" />
-					</f:facet>
-					<h:outputText value="#{item.status}" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Action" />
-					</f:facet>
-					<h:commandButton action="#{rentalController.changeStatusToReceivable(item)}" value="Approve Request" 
-									rendered="#{rentalController.isRequested(item)}"/>
-					<h:commandButton action="#{rentalController.changeStatusToRented(item)}" value="Book received by User" 
-									rendered="#{rentalController.isReceivable(item)}"/>
-					<h:commandButton action="#{rentalController.changeStatusToReturned(item)}" value="Book returned by User" 
-									rendered="#{rentalController.isRented(item)}"/>
-				</h:column>
-			</h:dataTable>
+	 		<div style="height:150px; width:500px; overflow:auto;">
+			 	<h:dataTable value="#{rentalController.items}" var="item"
+			 				styleClass="table table-striped table-bordered">
+			 		<h:column>
+			 			<f:facet name="header">
+							<h:outputText value="User" />
+						</f:facet>
+						<h:outputText value="#{item.user.name}" />
+			 		</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Name" />
+						</f:facet>
+						<h:outputText value="#{item.book.name}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Author" />
+						</f:facet>
+						<h:outputText value="#{item.book.author}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Status" />
+						</f:facet>
+						<h:outputText value="#{item.status}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Action" />
+						</f:facet>
+						<h:commandButton action="#{rentalController.changeStatusToReceivable(item)}" value="Approve Request" 
+										rendered="#{rentalController.isRequested(item)}"/>
+						<h:commandButton action="#{rentalController.changeStatusToRented(item)}" value="Book received by User" 
+										rendered="#{rentalController.isReceivable(item)}"/>
+						<h:commandButton action="#{rentalController.changeStatusToReturned(item)}" value="Book returned by User" 
+										rendered="#{rentalController.isRented(item)}"/>
+					</h:column>
+				</h:dataTable>
+			</div>
+			
+	 		<h4>Users</h4>
+	 		<div style="height:150px; width:350px; overflow:auto;">
+		 		<h:dataTable value="#{userController.items}" var="item"
+		 					styleClass="table table-striped table-bordered">
+		 			<h:column>
+						<f:facet name="header">
+							<h:outputText value="User Name" />
+						</f:facet>
+						<h:outputText value="#{item.name}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="User Roles" />
+						</f:facet>
+						<h:outputText value="#{item.roles}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Action" />
+						</f:facet>
+						<h:commandButton action="#{a}" value="Delete User" />
+					</h:column>
+		 		</h:dataTable>
+	 		</div>
 	 	</h:form>
 	 </div>
 	

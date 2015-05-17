@@ -8,15 +8,14 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<title>All Books</title>
+	<title>List of Books</title>
 </h:head>
 
 <h:body>
-	<h1>All Available Books</h1>
-	
-	<h:form>
-
-		<h:dataTable value="#{bookController.items}" var="item" styleClass="table table-striped table-bordered">
+		<h1>All available books</h1>
+		
+		<h:form>
+			<h:dataTable value="#{bookController.items}" var="item" styleClass="table table-striped table-bordered">
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Name" />
@@ -43,8 +42,12 @@
 				<!-- <h:graphicImage value="#{item.image}" /> -->
 			</h:column>
 		</h:dataTable>
-		<br />
-	</h:form>
-		
+			
+			<div>
+				<h:commandLink action="#{navigationController.registration()}" value="Create New Account" />
+				<br/>
+				<h:commandLink action="#{navigationController.loginPage()}" value="Back to Login Page" />
+			</div>
+		</h:form>
 </h:body>
 </html>

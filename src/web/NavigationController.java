@@ -39,5 +39,9 @@ public class NavigationController implements Serializable {
 		return "about";
 	}
 	
+	public String publicBookPage() {
+		return "publicBookPage";
+	}
+	
 
 }

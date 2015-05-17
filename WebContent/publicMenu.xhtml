@@ -16,7 +16,8 @@
 		<h:form>
 			<h1>LibraryApp Demo</h1>
 			
-			<h:commandLink action="a" value="Click here to see a list of available books without logging in" />
+			<h:commandLink action="#{navigationController.publicBookPage()}" 
+							value="Click here to see a list of available books without logging in" />
 		</h:form>
 	</div>
 		

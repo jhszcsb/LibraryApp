@@ -27,9 +27,15 @@ public class RentalController implements Serializable {
 	private RentalFacade facade;
 	
 	public DataModel<Rental> getItems() {
-		// TODO: implement -> query the rentals for the current user
-		if (items == null)
-			items = new ListDataModel<Rental>(facade.findAll());
+		SecurityBean sec = new SecurityBean();
+		if (items == null){
+			if(sec.isCustomer()) {
+				items = new ListDataModel<Rental>(facade.findForCustomer(sec.getUserName()));
+			}
+			else {
+				items = new ListDataModel<Rental>(facade.findAll());
+			}
+		}
 		return items;
 	}
 	
