@@ -10,6 +10,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -21,10 +22,11 @@ public class Users implements Serializable {
 	public static final String CUSTOMER = "CUSTOMER";
 	public static final String ADMIN = "ADMIN";
 
-	@Id
-	@GeneratedValue
+	//@Id
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userid;
 
+	@Id
 	private String name;
 
 	private String password;

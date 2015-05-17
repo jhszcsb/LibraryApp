@@ -77,6 +77,9 @@ public class UserController implements Serializable {
 	}
 	
 	public String save() {
+		System.out.println("Name: " + current.getName());			// debug
+		System.out.println("Password: " + current.getPassword());	// debug
+		System.out.println("Roles: " + current.getRoles());			// debug
 		facade.create(current);
 
 		FacesUtil.addInfoMessage("Entity successfully saved");
