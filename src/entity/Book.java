@@ -18,6 +18,7 @@ public class Book implements Serializable {
 	@GeneratedValue
 	private int bookid;
 	
+	// TODO: rename to title
 	private String name;
 	
 	private String author;

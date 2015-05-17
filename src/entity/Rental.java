@@ -15,7 +15,7 @@ public class Rental implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue
+	//@GeneratedValue
 	private int rentalid;
 	
 	//bi-directional many-to-one association to Book

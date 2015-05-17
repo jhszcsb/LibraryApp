@@ -19,10 +19,12 @@
 	 	<h2>Find Books</h2>
 	 	
 	 	<h:form>
-		 	<h:outputLabel value="Search by Book title or author " />
-		 	<h:inputText value="" />
-		 	<h:commandButton action="a" value="Find" />
+		 	<h:outputLabel value="Search Books by title or author " />
+		 	<h:inputText value="#{bookController.searchField}" />
+		 	<h:commandButton action="#{bookController.find()}" value="Find" />
+		 	<h:messages />
 		 	
+		 	<br/><br/><br/>
 		 	<h:dataTable value="#{bookController.items}" var="item">
 				<h:column>
 					<f:facet name="header">
@@ -48,6 +50,9 @@
 					</f:facet>
 					<!-- TODO: fix image displaying (ClassCastException) -->
 					<!-- <h:graphicImage value="#{item.image}" /> -->
+				</h:column>
+				<h:column>
+					<h:commandButton action="#{bookController.find()}" value="Send Rent Request" />
 				</h:column>
 			</h:dataTable>
 	 	</h:form>

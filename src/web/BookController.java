@@ -8,6 +8,7 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Named;
 
+import model.BookSearchForm;
 import dal.BookFacade;
 import entity.Book;
 
@@ -19,8 +20,21 @@ public class BookController implements Serializable {
 	
 	private DataModel<Book> items = null;
 	
+	private String searchField;
+	
 	@EJB
 	private BookFacade facade;
+	
+	public void find() {
+		if (searchField == null || searchField == "") {
+			FacesUtil.addInfoMessage("Please enter a value in the search field!");
+			items = new ListDataModel<Book>();
+		}
+		else {
+			items = new ListDataModel<Book>(facade.search(searchField));
+		}
+		//return null;
+	}
 	
 	public DataModel<Book> getItems() {
 		if (items == null)
@@ -30,6 +44,14 @@ public class BookController implements Serializable {
 	
 	public void setItems(DataModel<Book> items) {
 		this.items = items;
+	}
+
+	public String getSearchField() {
+		return searchField;
+	}
+
+	public void setSearchField(String searchField) {
+		this.searchField = searchField;
 	}
 
 }
