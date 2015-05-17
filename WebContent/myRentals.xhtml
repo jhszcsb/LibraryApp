@@ -17,8 +17,33 @@
 	 
 	 <div style="width:1000px; height: 500px; border:solid; border-width:5px">
 	 	<h2>My Rentals</h2>
+	 	
+	 	<h:form>
+		 	
+		 	<br/><br/><br/>
+		 	<h:dataTable value="#{rentalController.items}" var="item">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Name" />
+					</f:facet>
+					<h:outputText value="#{item.book.name}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Author" />
+					</f:facet>
+					<h:outputText value="#{item.book.author}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Status" />
+					</f:facet>
+					<h:outputText value="#{item.status}" />
+				</h:column>
+			</h:dataTable>
+	 	</h:form>
 	 </div>
-	
+	 	
 		
 </h:body>
 

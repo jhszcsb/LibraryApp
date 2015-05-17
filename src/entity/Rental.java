@@ -25,7 +25,7 @@ public class Rental implements Serializable {
 	
 	//bi-directional many-to-one association to User
 	@ManyToOne
-	@JoinColumn(name="USERID")
+	@JoinColumn(name="USERNAME")
 	private Users users;
 	
 	private Date rentaldate;
@@ -56,6 +56,18 @@ public class Rental implements Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public void setBook(Book book) {
+		this.book = book;
+	}
+	
+	public void setUser(Users user) {
+		this.users = user;
+	}
+	
+	public Book getBook() {
+		return book;
 	}
 
 }

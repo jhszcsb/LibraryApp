@@ -15,7 +15,7 @@ public class Book implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue
+	//@GeneratedValue
 	private int bookid;
 	
 	// TODO: rename to title
@@ -33,6 +33,10 @@ public class Book implements Serializable {
 	//bi-directional many-to-one association to Rental
 	@OneToMany(mappedBy="book")
 	private List<Rental> rentals;
+	
+	public int getId() {
+		return bookid;
+	}
 
 	public String getName() {
 		return name;

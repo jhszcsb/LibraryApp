@@ -51,8 +51,9 @@
 					<!-- TODO: fix image displaying (ClassCastException) -->
 					<!-- <h:graphicImage value="#{item.image}" /> -->
 				</h:column>
-				<h:column>
-					<h:commandButton action="#{bookController.find()}" value="Send Rent Request" />
+				<h:column rendered="#{securityBean.customer}">
+					<h:commandButton action="#{rentalController.createRental(item)}" value="Send Rent Request" 
+									rendered="#{rentalController.isNotRented(item.id)}"/>
 				</h:column>
 			</h:dataTable>
 	 	</h:form>

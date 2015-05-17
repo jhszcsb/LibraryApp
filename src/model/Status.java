@@ -2,17 +2,24 @@ package model;
 
 public enum Status {
 	
-	REQUESTED("Request sent."),
-	REJECTED("The request has been rejected."),
-	RECEIVABLE("The requested book is receivable."),
-	RENTED("The requested book has been rented by the user."),
-	EXPIRED("The book rental date expired."),
-	RETURNED("The book has been returned by the user");
+	REQUESTED("REQUESTED", "Request sent."),
+	REJECTED("REJECTED", "The request has been rejected."),
+	RECEIVABLE("RECEIVABLE", "The requested book is receivable."),
+	RENTED("RENTED", "The requested book has been rented by the user."),
+	EXPIRED("EXPIRED", "The book rental date expired."),
+	RETURNED("RETURNED", "The book has been returned by the user");
+	
+	String value;
 	
 	String info;
 	
-	Status(String info) {
+	Status(String value, String info) {
+		this.value = value;
 		this.info = info;
+	}
+	
+	public String getValue() {
+		return value;
 	}
 }
 
