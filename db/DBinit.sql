@@ -1,3 +1,8 @@
+/*
+ * TODO: rentals should be inserted for customers only
+ * TODO: check other constraints...
+ * */
+
 DROP TABLE RENTAL;
 DROP TABLE USERS_ROLES;
 DROP TABLE BOOK;

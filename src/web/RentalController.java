@@ -77,6 +77,16 @@ public class RentalController implements Serializable {
 		facade.edit(item);
 	}
 	
+	public void changeStatusToExpired(Rental item) {
+		item.setStatus(Status.EXPIRED.getValue());
+		facade.edit(item);
+	}
+	
+	public void changeStatusToRejected(Rental item) {
+		item.setStatus(Status.REJECTED.getValue());
+		facade.edit(item);
+	}
+	
 	public boolean isRequested(Rental item) {
 		return item.getStatus().equals("REQUESTED");	// TODO: get the status from enum
 	}
@@ -87,6 +97,10 @@ public class RentalController implements Serializable {
 	
 	public boolean isRented(Rental item) {
 		return item.getStatus().equals("RENTED");
+	}
+	
+	public void deleteRental(Rental item) {
+		facade.delete(item);							// TODO: implement
 	}
 
 }

@@ -15,12 +15,12 @@
 
 	 <ui:include src="menu.xhtml" />
 	 
-	 <div style="width:1000px; height: 500px; border:solid; border-width:5px">
+	 <div style="width:1000px; height:800px; border:solid; border-width:5px">
 	 	<h2>Administration</h2>
 	 	<br/><br/>
 	 	<h4>Rentals</h4>
 	 	<h:form>
-	 		<div style="height:150px; width:500px; overflow:auto;">
+	 		<div style="height:250px; width:750px; overflow:auto;">
 			 	<h:dataTable value="#{rentalController.items}" var="item"
 			 				styleClass="table table-striped table-bordered">
 			 		<h:column>
@@ -53,16 +53,21 @@
 						</f:facet>
 						<h:commandButton action="#{rentalController.changeStatusToReceivable(item)}" value="Approve Request" 
 										rendered="#{rentalController.isRequested(item)}"/>
+						<h:commandButton action="#{rentalController.changeStatusToRejected(item)}" value="Reject Request" 
+										rendered="#{rentalController.isRequested(item)}"/>
 						<h:commandButton action="#{rentalController.changeStatusToRented(item)}" value="Book received by User" 
 										rendered="#{rentalController.isReceivable(item)}"/>
 						<h:commandButton action="#{rentalController.changeStatusToReturned(item)}" value="Book returned by User" 
 										rendered="#{rentalController.isRented(item)}"/>
+						<h:commandButton action="#{rentalController.changeStatusToExpired(item)}" value="Book Rental Expired" 
+										rendered="#{rentalController.isRented(item)}"/>
+						<h:commandButton action="#{rentalController.deleteRental(item)}" value="Delete Rental" />
 					</h:column>
 				</h:dataTable>
 			</div>
 			
 	 		<h4>Users</h4>
-	 		<div style="height:150px; width:350px; overflow:auto;">
+	 		<div style="height:250px; width:350px; overflow:auto;">
 		 		<h:dataTable value="#{userController.items}" var="item"
 		 					styleClass="table table-striped table-bordered">
 		 			<h:column>

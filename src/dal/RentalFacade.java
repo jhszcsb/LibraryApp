@@ -49,5 +49,14 @@ public class RentalFacade extends AbstractFacade<Rental> {
 		List<Rental> result = em.createQuery(query).setParameter("userName", userName).getResultList();		
 		return result;
 	}
+	
+	public Rental find(Rental rental) {
+		return em.find(Rental.class, rental.getId());
+	}
+	
+	public void delete(Rental rental) {
+		Rental toBeDeleted = find(rental);
+		em.remove(toBeDeleted);
+	}
 
 }
