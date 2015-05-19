@@ -24,7 +24,10 @@
 			<h:inputText value="#{userController.current.name}"/>
 			<br/>
 			<h:outputText value="Password" />
-			<h:inputText value="#{userController.current.password}"/>
+			<h:inputSecret value="#{userController.current.password}" />
+			<br/>
+			<h:outputText value="Repeat Password" />
+			<h:inputSecret value="#{userController.current.password}" />
 			<br/>
 			<h:commandButton action="#{userController.save()}" value="Create Account" />
 			
