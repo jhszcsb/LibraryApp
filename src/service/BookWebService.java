@@ -16,6 +16,9 @@ import entity.Book;
 @WebService
 public class BookWebService {
 	
+	@EJB
+	private BookFacade facade;
+	
 	private List<BookModel> books = null;	// for dummy service
 	private List<Book> books2 = null;
 	
@@ -26,7 +29,7 @@ public class BookWebService {
 	
 	@PostConstruct
 	public void readBooksFromDB() {
-		BookFacade facade = new BookFacade();
+		//BookFacade facade = new BookFacade();
 		List<Book> booksList = new ArrayList<Book>();
 		booksList = facade.findAll();
 		books2 = booksList;
