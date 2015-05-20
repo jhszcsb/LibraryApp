@@ -86,5 +86,9 @@ public class UserController implements Serializable {
 
 		return "login.xhtml";
 	}
+	
+	public void changePassword() {
+		// TODO: implement
+	}
 
 }

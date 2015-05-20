@@ -17,6 +17,17 @@
 	 
 	 <div style="width:1000px; height: 500px; border:solid; border-width:5px">
 	 	<h2>Profile</h2>
+	 	
+	 	<h:form>
+			<h:messages />
+			<h:outputText value="Enter New Password" />
+			<h:inputSecret value="#{userController.current.password}" />
+			<br/>
+			<h:outputText value="Repeat Password" />
+			<h:inputSecret value="#{userController.current.password}" />
+			<br/>
+			<h:commandButton action="#{userController.changePassword()}" value="Change Password" />
+		</h:form>
 	 </div>
 	
 		
