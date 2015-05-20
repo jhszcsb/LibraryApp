@@ -22,7 +22,6 @@ public class Users implements Serializable {
 	public static final String CUSTOMER = "CUSTOMER";
 	public static final String ADMIN = "ADMIN";
 
-	//@Id
 	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userid;
 
@@ -30,6 +29,10 @@ public class Users implements Serializable {
 	private String name;
 
 	private String password;
+	
+	private String firstname;
+	
+	private String lastname;
 	
 	@ElementCollection(fetch = FetchType.EAGER)
 	private Set<String> roles = new HashSet<>();
@@ -58,6 +61,22 @@ public class Users implements Serializable {
 		this.password = password;
 	}
 	
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
 	public Set<String> getRoles() {
 		return Collections.unmodifiableSet(roles);
 	}

@@ -34,8 +34,8 @@
 	
 <security-constraint>
  <web-resource-collection>
-  <web-resource-name>mainPage</web-resource-name>
-  <url-pattern>/faces/mainPage.xhtml</url-pattern>
+  <web-resource-name>about</web-resource-name>
+  <url-pattern>/faces/about.xhtml</url-pattern>
   <http-method>POST</http-method>
   <http-method>GET</http-method>
  </web-resource-collection>
@@ -44,11 +44,11 @@
   <role-name>ADMIN</role-name>
  </auth-constraint>
 </security-constraint>
-	
+
 <security-constraint>
  <web-resource-collection>
-  <web-resource-name>listUsers</web-resource-name>
-  <url-pattern>/faces/listUsers.xhtml</url-pattern>
+  <web-resource-name>administration</web-resource-name>
+  <url-pattern>/faces/administration.xhtml</url-pattern>
   <http-method>POST</http-method>
   <http-method>GET</http-method>
  </web-resource-collection>
@@ -59,13 +59,52 @@
 
 <security-constraint>
  <web-resource-collection>
-  <web-resource-name>listRentals</web-resource-name>
-  <url-pattern>/faces/listRentals.xhtml</url-pattern>
+  <web-resource-name>findBooks</web-resource-name>
+  <url-pattern>/faces/findBooks.xhtml</url-pattern>
   <http-method>POST</http-method>
   <http-method>GET</http-method>
  </web-resource-collection>
  <auth-constraint>
+  <role-name>CUSTOMER</role-name>
   <role-name>ADMIN</role-name>
+ </auth-constraint>
+</security-constraint>
+
+<security-constraint>
+ <web-resource-collection>
+  <web-resource-name>profile</web-resource-name>
+  <url-pattern>/faces/profile.xhtml</url-pattern>
+  <http-method>POST</http-method>
+  <http-method>GET</http-method>
+ </web-resource-collection>
+ <auth-constraint>
+  <role-name>CUSTOMER</role-name>
+  <role-name>ADMIN</role-name>
+ </auth-constraint>
+</security-constraint>
+
+<security-constraint>
+ <web-resource-collection>
+  <web-resource-name>mainPage</web-resource-name>
+  <url-pattern>/faces/mainPage.xhtml</url-pattern>
+  <http-method>POST</http-method>
+  <http-method>GET</http-method>
+ </web-resource-collection>
+ <auth-constraint>
+  <role-name>CUSTOMER</role-name>
+  <role-name>ADMIN</role-name>
+ </auth-constraint>
+</security-constraint>
+
+<security-constraint>
+ <web-resource-collection>
+  <web-resource-name>myRentals</web-resource-name>
+  <url-pattern>/faces/myRentals.xhtml</url-pattern>
+  <http-method>POST</http-method>
+  <http-method>GET</http-method>
+ </web-resource-collection>
+ <auth-constraint>
+  <role-name>CUSTOMER</role-name>
  </auth-constraint>
 </security-constraint>
 

@@ -1,0 +1,20 @@
+Functionality TODO:
+-add more fields to entities + db tables			[DONE]
+-set authentication/authorization for pages			[DONE]
+-set authentication/authorization for methods		
+-add web service									
+-add book administration							
+-add file upload									
+-add search functionality to public book list page	
+
+Other TODO:
+-fix navigation after login							
+-fix error/info messages - jsf faces messages		
+-remove ROLES column from table USERS				
+-remove inline CSS styles							
+-add hashed passwords								
+-add password validator(matching+strength)			
+-remove "debug" lines from code						
+-remove "todo" lines from code						
+-add more test data									[DONE]
+-maybe find a better name for Users entity			

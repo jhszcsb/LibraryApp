@@ -28,6 +28,8 @@ public class Book implements Serializable {
 	
 	private String contentType;
 	
+	private String genre;
+	
 	private int availablecopies;
 	
 	//bi-directional many-to-one association to Rental
@@ -68,6 +70,14 @@ public class Book implements Serializable {
 
 	public void setContentType(String contentType) {
 		this.contentType = contentType;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
 	public int getAvailablecopies() {
