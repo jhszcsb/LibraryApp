@@ -68,7 +68,7 @@ public class BookController implements Serializable {
 	public String save() {
 		facade.create(current);
 
-		FacesUtil.addInfoMessage("Entity successfully saved");
+		FacesUtil.addInfoMessage("Book successfully saved");
 
 		return "findBooks.xhtml";
 	}

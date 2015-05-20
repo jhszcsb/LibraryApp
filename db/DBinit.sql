@@ -50,10 +50,10 @@ CREATE TABLE USERS_ROLES
 );
 
 INSERT INTO USERS (USERID, NAME, PASSWORD, FIRSTNAME, LASTNAME, ROLES) VALUES 
-(0, 'Csabi', 'aaa', 'Csaba', 'Juhasz', 'ADMIN'), 
-(1, 'Lilla', 'bbb', 'Lilla', 'Ledneczki', 'CUSTOMER'), 
-(2, 'Gergely', 'ccc', 'Gergely', 'Juhasz', 'ADMIN'), 
-(3, 'Melinda', 'ddd', 'Melinda', 'Kiss', 'CUSTOMER');
+(100, 'Csabi', 'aaa', 'Csaba', 'Juhasz', 'ADMIN'), 
+(101, 'Lilla', 'bbb', 'Lilla', 'Ledneczki', 'CUSTOMER'), 
+(102, 'Gergely', 'ccc', 'Gergely', 'Juhasz', 'ADMIN'), 
+(103, 'Melinda', 'ddd', 'Melinda', 'Kiss', 'CUSTOMER');
 
 INSERT INTO USERS_ROLES (USERS_NAME, ROLES) VALUES 
 ('Csabi', 'ADMIN'), 
@@ -62,16 +62,16 @@ INSERT INTO USERS_ROLES (USERS_NAME, ROLES) VALUES
 ('Melinda', 'CUSTOMER');
 
 INSERT INTO BOOK(BOOKID, NAME, AUTHOR, GENRE, AVAILABLECOPIES) VALUES 
-(0, 'Dune', 'Frank Herbert', 'Fiction', 10), 
-(1, 'Creativity, Inc.', 'Ed Catmull', 'Non Fiction', 10), 
-(2, 'Lécume des jours', 'Boris Vian', 'Romance', 10), 
-(3, 'On The Road', 'Jack Kerouac', 'Realistic Fiction', 10), 
-(4, 'The Hunger Games', 'Suzanne Collins', 'Fiction', 10), 
-(5, 'Mockingjay', 'Suzanne Collins', 'Fiction', 10), 
-(6, 'The Catcher in the Rye', 'J.D. Salinger', 'Realistic Fiction', 10);
+(100, 'Dune', 'Frank Herbert', 'Fiction', 10), 
+(101, 'Creativity, Inc.', 'Ed Catmull', 'Non Fiction', 10), 
+(102, 'Lécume des jours', 'Boris Vian', 'Romance', 10), 
+(103, 'On The Road', 'Jack Kerouac', 'Realistic Fiction', 10), 
+(104, 'The Hunger Games', 'Suzanne Collins', 'Fiction', 10), 
+(105, 'Mockingjay', 'Suzanne Collins', 'Fiction', 10), 
+(106, 'The Catcher in the Rye', 'J.D. Salinger', 'Realistic Fiction', 10);
 
 INSERT INTO RENTAL (RENTALID, BOOKID, USERNAME, RENTALDATE, RETURNDATE, STATUS) VALUES 
-(0, 1, 'Lilla', '2015-01-01', '2015-01-01', 'REQUESTED'), 
-(1, 2, 'Lilla', '2015-01-01', '2015-01-01', 'RECEIVABLE'), 
-(2, 1, 'Gergely', '2015-05-10', '2015-05-10', 'RENTED');
+(100, 101, 'Lilla', '2015-01-01', '2015-01-01', 'REQUESTED'), 
+(101, 102, 'Lilla', '2015-01-01', '2015-01-01', 'RECEIVABLE'), 
+(102, 101, 'Gergely', '2015-05-10', '2015-05-10', 'RENTED');
 

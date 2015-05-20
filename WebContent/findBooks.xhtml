@@ -16,14 +16,16 @@
 	 <ui:include src="menu.xhtml" />
 	 
 	 <div style="width:1000px; height: 500px; border:solid; border-width:5px">
-	 	<h2>Find Books</h2>
+	 	<h2>Books</h2>
 	 	
 	 	<h:form>
 		 	<h:outputLabel value="Search Books by title or author " />
 		 	<h:inputText value="#{bookController.searchField}" />
 		 	<h:commandButton action="#{bookController.find()}" value="Find" />
+		 	<h:commandButton action="#{navigationController.uploadBook()}" value="Upload New Book" 
+		 					rendered="#{securityBean.admin}" />
+		 	
 		 	<h:messages />
-		 	<h:commandButton action="#{navigationController.uploadBook()}" value="Upload New Book" />
 		 	
 		 	<br/><br/><br/>
 		 	<h:dataTable value="#{bookController.items}" var="item" styleClass="table table-striped table-bordered">

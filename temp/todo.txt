@@ -9,13 +9,15 @@
 -set authentication/authorization for all methods	[DONE]
 -add web service									
 -add file upload for books
+-implement automatic page reload					
+	(causes problems with repeated entity saving)
 
 --== Other TODO ==--
 -add more test data									[DONE]
+-rename Find Books to Books							[DONE]
 -add ui:composition for duplicated xhtmls			
--rename Find Books to Books							
 -fix navigation after login							
--fix error/info messages - jsf faces messages		
+-add error/info messages - jsf faces messages		
 -remove ROLES column from table USERS				
 -remove inline CSS styles							
 -add hashed passwords								
@@ -24,3 +26,4 @@
 -remove "todo" lines from code						
 -maybe find a better name for Users entity			
 -maybe refactor SecurityBean usage					
+-remove unused xhtmls										

@@ -82,7 +82,7 @@ public class UserController implements Serializable {
 		System.out.println("Roles: " + current.getRoles());			// debug
 		facade.create(current);
 
-		FacesUtil.addInfoMessage("Entity successfully saved");
+		FacesUtil.addInfoMessage("Registration successfully completed");
 
 		return "login.xhtml";
 	}
