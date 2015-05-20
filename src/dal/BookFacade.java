@@ -54,11 +54,11 @@ public class BookFacade extends AbstractFacade<Book> {
 	public List<Book> search(String searchField) {
 		// TODO: use named query?
 		// TODO: fix query to search parts of words
-		String query = "from Book b where b.name like :title or b.author like :author";
+		String query = "from Book b where b.title like :title or b.author like :author";
 		List<Book> result = em.createQuery(query).setParameter("title", searchField).setParameter("author", searchField).getResultList();
 		
 		if(!result.isEmpty()) {															// debug
-			System.out.println(result.get(0).getAuthor() + result.get(0).getName());	// debug
+			System.out.println(result.get(0).getAuthor() + result.get(0).getTitle());	// debug
 		}																				// debug
 		return result;
 	}

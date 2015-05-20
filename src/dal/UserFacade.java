@@ -32,8 +32,6 @@ public class UserFacade extends AbstractFacade<Users> {
 	
 	/* ROLE: 
 		
-		TODO: megcsinalni
-		
 		User-t listazni, letrehozni mindenki tud
 		User-t modositani, torolni csak ADMIN tud
 

@@ -21,3 +21,8 @@ New config for separate role table:
                     </login-module>
                 </authentication>
             </security-domain>
+            
+            
+            
+                            <module-option name="hashAlgorithm" value="SHA-256"/>
+                            <module-option name="hashEncoding" value="base64"/>

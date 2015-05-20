@@ -24,9 +24,9 @@
 		 	<h:dataTable value="#{rentalController.items}" var="item" styleClass="table table-striped table-bordered">
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="Name" />
+						<h:outputText value="Title" />
 					</f:facet>
-					<h:outputText value="#{item.book.name}" />
+					<h:outputText value="#{item.book.title}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">

@@ -1,8 +1,3 @@
-/*
- * TODO: rentals should be inserted for customers only
- * TODO: check other constraints...
- * */
-
 
 DROP TABLE RENTAL;
 DROP TABLE USERS_ROLES;
@@ -15,14 +10,13 @@ CREATE TABLE USERS
 	name VARCHAR(255) NOT NULL PRIMARY KEY,
 	password VARCHAR(255) NOT NULL,
 	firstname VARCHAR(255) NOT NULL,
-	lastname VARCHAR(255) NOT NULL,
-	roles VARCHAR(255)
+	lastname VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE BOOK
 (
 	bookid INT NOT NULL PRIMARY KEY,
-	name VARCHAR(255) NOT NULL,
+	title VARCHAR(255) NOT NULL,
 	author VARCHAR(255) NOT NULL,
 	image BLOB,
 	contenttype VARCHAR(255),
@@ -49,11 +43,11 @@ CREATE TABLE USERS_ROLES
 	FOREIGN KEY(users_name) REFERENCES USERS(name)
 );
 
-INSERT INTO USERS (USERID, NAME, PASSWORD, FIRSTNAME, LASTNAME, ROLES) VALUES 
-(100, 'Csabi', 'aaa', 'Csaba', 'Juhasz', 'ADMIN'), 
-(101, 'Lilla', 'bbb', 'Lilla', 'Ledneczki', 'CUSTOMER'), 
-(102, 'Gergely', 'ccc', 'Gergely', 'Juhasz', 'ADMIN'), 
-(103, 'Melinda', 'ddd', 'Melinda', 'Kiss', 'CUSTOMER');
+INSERT INTO USERS (USERID, NAME, PASSWORD, FIRSTNAME, LASTNAME) VALUES 
+(100, 'Csabi', 'aaa', 'Csaba', 'Juhasz'), 
+(101, 'Lilla', 'bbb', 'Lilla', 'Ledneczki'), 
+(102, 'Gergely', 'ccc', 'Gergely', 'Juhasz'), 
+(103, 'Melinda', 'ddd', 'Melinda', 'Kiss');
 
 INSERT INTO USERS_ROLES (USERS_NAME, ROLES) VALUES 
 ('Csabi', 'ADMIN'), 
@@ -61,7 +55,7 @@ INSERT INTO USERS_ROLES (USERS_NAME, ROLES) VALUES
 ('Gergely', 'ADMIN'), 
 ('Melinda', 'CUSTOMER');
 
-INSERT INTO BOOK(BOOKID, NAME, AUTHOR, GENRE, AVAILABLECOPIES) VALUES 
+INSERT INTO BOOK(BOOKID, TITLE, AUTHOR, GENRE, AVAILABLECOPIES) VALUES 
 (100, 'Dune', 'Frank Herbert', 'Fiction', 10), 
 (101, 'Creativity, Inc.', 'Ed Catmull', 'Non Fiction', 10), 
 (102, 'Lécume des jours', 'Boris Vian', 'Romance', 10), 
@@ -73,5 +67,4 @@ INSERT INTO BOOK(BOOKID, NAME, AUTHOR, GENRE, AVAILABLECOPIES) VALUES
 INSERT INTO RENTAL (RENTALID, BOOKID, USERNAME, RENTALDATE, RETURNDATE, STATUS) VALUES 
 (100, 101, 'Lilla', '2015-01-01', '2015-01-01', 'REQUESTED'), 
 (101, 102, 'Lilla', '2015-01-01', '2015-01-01', 'RECEIVABLE'), 
-(102, 101, 'Gergely', '2015-05-10', '2015-05-10', 'RENTED');
-
+(102, 101, 'Melinda', '2015-05-10', '2015-05-10', 'RENTED');
