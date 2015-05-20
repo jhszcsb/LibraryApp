@@ -22,7 +22,7 @@ public class Users implements Serializable {
 	public static final String CUSTOMER = "CUSTOMER";
 	public static final String ADMIN = "ADMIN";
 
-	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int userid;
 
 	@Id

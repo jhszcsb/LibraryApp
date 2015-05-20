@@ -17,4 +17,13 @@ public class FacesUtil {
 		
 		facesContext.getExternalContext().getFlash().setKeepMessages(true);
 	}
+	
+	public static void addErrorMessage(String text) {
+		FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, text,
+				text);
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		facesContext.addMessage(null, msg);
+		
+		facesContext.getExternalContext().getFlash().setKeepMessages(true);
+	}
 }

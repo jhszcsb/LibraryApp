@@ -9,13 +9,12 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import entity.Book;
 import entity.Rental;
 import entity.Users;
 
 @Stateless
 @LocalBean
-//@DeclareRoles({ Users.CUSTOMER, Users.ADMIN })
+@DeclareRoles({ Users.CUSTOMER, Users.ADMIN })
 public class RentalFacade extends AbstractFacade<Rental> {
 	
 	@PersistenceContext
@@ -37,12 +36,13 @@ public class RentalFacade extends AbstractFacade<Rental> {
 
 	 */
 	
-	//@RolesAllowed({Users.CUSTOMER, Users.ADMIN})
+	@RolesAllowed({Users.CUSTOMER, Users.ADMIN})
 	@Override
 	public List<Rental> findAll() {
 		return super.findAll();
 	}
 
+	@RolesAllowed({Users.CUSTOMER, Users.ADMIN})
 	public List<Rental> findForCustomer(String userName) {
 		// TODO: use named query?
 		String query = "from Rental r where r.users.name = :userName";
@@ -50,10 +50,12 @@ public class RentalFacade extends AbstractFacade<Rental> {
 		return result;
 	}
 	
+	@RolesAllowed({Users.CUSTOMER, Users.ADMIN})
 	public Rental find(Rental rental) {
 		return em.find(Rental.class, rental.getId());
 	}
 	
+	@RolesAllowed({Users.ADMIN})
 	public void delete(Rental rental) {
 		Rental toBeDeleted = find(rental);
 		em.remove(toBeDeleted);

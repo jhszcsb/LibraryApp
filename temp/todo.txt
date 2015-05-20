@@ -3,15 +3,17 @@
 -set authentication/authorization for pages			[DONE]
 -add search functionality to public book list page	[DONE]
 -add book administration							[DONE]
--set authentication/authorization for methods		
--add condition for book request - available copies	
+-add condition for book request - available copies	[DONE]
+-create rental for logged in user					[DONE]
+-fix DB id fields/autogeneration					[DONE]
+-set authentication/authorization for all methods	[DONE]
 -add web service									
 -add file upload for books
--fix DB id fields/autogeneration					
 
 --== Other TODO ==--
+-add more test data									[DONE]
 -add ui:composition for duplicated xhtmls			
--rename Find Books to Books
+-rename Find Books to Books							
 -fix navigation after login							
 -fix error/info messages - jsf faces messages		
 -remove ROLES column from table USERS				
@@ -20,5 +22,5 @@
 -add password validator(matching+strength)			
 -remove "debug" lines from code						
 -remove "todo" lines from code						
--add more test data									[DONE]
 -maybe find a better name for Users entity			
+-maybe refactor SecurityBean usage					

@@ -10,6 +10,7 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Named;
 
 import dal.RentalFacade;
+import dal.UserFacade;
 import entity.Book;
 import entity.Rental;
 import entity.Users;
@@ -25,6 +26,9 @@ public class RentalController implements Serializable {
 	
 	@EJB
 	private RentalFacade facade;
+	
+	@EJB
+	private UserFacade userFacade;
 	
 	public DataModel<Rental> getItems() {
 		SecurityBean sec = new SecurityBean();
@@ -44,16 +48,17 @@ public class RentalController implements Serializable {
 	}
 	
 	public void createRental(Book book) {
-		//SecurityBean sec = new SecurityBean();
+		if (book.getAvailablecopies() <= 0) {
+			FacesUtil.addErrorMessage("Request can not be created! Reason: no copies available.");
+			return;
+		}
 		Rental newRental = new Rental();
 		newRental.setRentaldate(new Date());
 		newRental.setReturndate(new Date());
 		newRental.setStatus(Status.REQUESTED.getValue());
 		newRental.setBook(book);
-		//newRental.setUser(sec.getUserName());
-		Users u = new Users();	// TODO: implement -> get the current user and set it for the rental
-		u.setName("Csabi");
-		newRental.setUser(u);
+		Users currentUser = userFacade.getLoggedInUser();
+		newRental.setUser(currentUser);
 		facade.create(newRental);
 	}
 	
