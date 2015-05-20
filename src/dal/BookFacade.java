@@ -39,12 +39,18 @@ public class BookFacade extends AbstractFacade<Book> {
 	*/
 	
 	@Override
+	@RolesAllowed({Users.ADMIN})
+	public void create(Book entity) {
+		super.create(entity);
+	}
+	
+	@Override
 	@PermitAll
 	public List<Book> findAll() {
 		return super.findAll();
 	}
 
-	@RolesAllowed({Users.CUSTOMER, Users.ADMIN})
+	@PermitAll
 	public List<Book> search(String searchField) {
 		// TODO: use named query?
 		// TODO: fix query to search parts of words

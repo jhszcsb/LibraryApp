@@ -23,6 +23,7 @@
 		 	<h:inputText value="#{bookController.searchField}" />
 		 	<h:commandButton action="#{bookController.find()}" value="Find" />
 		 	<h:messages />
+		 	<h:commandButton action="#{navigationController.uploadBook()}" value="Upload New Book" />
 		 	
 		 	<br/><br/><br/>
 		 	<h:dataTable value="#{bookController.items}" var="item" styleClass="table table-striped table-bordered">

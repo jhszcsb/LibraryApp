@@ -8,7 +8,6 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Named;
 
-import model.BookSearchForm;
 import dal.BookFacade;
 import entity.Book;
 
@@ -18,12 +17,24 @@ public class BookController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	private Book current;
+	
 	private DataModel<Book> items = null;
 	
 	private String searchField;
 	
 	@EJB
 	private BookFacade facade;
+	
+	public Book getCurrent() {
+		if (current == null)
+			current = new Book();
+		return current;
+	}
+
+	public void setCurrent(Book current) {
+		this.current = current;
+	}
 	
 	public void find() {
 		if (searchField == null || searchField == "") {
@@ -52,6 +63,14 @@ public class BookController implements Serializable {
 
 	public void setSearchField(String searchField) {
 		this.searchField = searchField;
+	}
+	
+	public String save() {
+		facade.create(current);
+
+		FacesUtil.addInfoMessage("Entity successfully saved");
+
+		return "findBooks.xhtml";
 	}
 
 }

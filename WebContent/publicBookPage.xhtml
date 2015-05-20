@@ -15,6 +15,10 @@
 		<h1>All available books</h1>
 		
 		<h:form>
+			<h:outputLabel value="Search Books by title or author " />
+		 	<h:inputText value="#{bookController.searchField}" />
+		 	<h:commandButton action="#{bookController.find()}" value="Find" />
+		
 			<h:dataTable value="#{bookController.items}" var="item" styleClass="table table-striped table-bordered">
 			<h:column>
 				<f:facet name="header">

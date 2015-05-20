@@ -1,13 +1,17 @@
-Functionality TODO:
+--== Functionality TODO ==--
 -add more fields to entities + db tables			[DONE]
 -set authentication/authorization for pages			[DONE]
+-add search functionality to public book list page	[DONE]
+-add book administration							[DONE]
 -set authentication/authorization for methods		
+-add condition for book request - available copies	
 -add web service									
--add book administration							
--add file upload									
--add search functionality to public book list page	
+-add file upload for books
+-fix DB id fields/autogeneration					
 
-Other TODO:
+--== Other TODO ==--
+-add ui:composition for duplicated xhtmls			
+-rename Find Books to Books
 -fix navigation after login							
 -fix error/info messages - jsf faces messages		
 -remove ROLES column from table USERS				

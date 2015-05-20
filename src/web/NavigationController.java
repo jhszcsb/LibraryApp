@@ -43,5 +43,8 @@ public class NavigationController implements Serializable {
 		return "publicBookPage";
 	}
 	
+	public String uploadBook() {
+		return "uploadBook";
+	}
 
 }
