@@ -8,7 +8,7 @@
 -fix DB id fields/autogeneration					[DONE]
 -set authentication/authorization for all methods	[DONE]
 -add web service									
--add file upload for books
+-add file upload for books							
 -implement automatic page reload					
 	(causes problems with repeated entity saving)
 

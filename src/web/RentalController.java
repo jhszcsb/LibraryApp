@@ -64,6 +64,18 @@ public class RentalController implements Serializable {
 	
 	public boolean isNotRented(int id) {
 		// TODO: implement -> does the current user have an ongoing rental for this book?
+		/*SecurityBean sec = new SecurityBean();
+		DataModel<Rental> list = new ListDataModel<Rental>(facade.findForCustomer(sec.getUserName()));
+		boolean contains = false;
+		String reuestedRentalTitle = facade.find(id).getBook().getTitle();
+		for(Rental r : list) {
+			if(r.getBook().getTitle().equalsIgnoreCase(reuestedRentalTitle)) {
+				contains = true;
+			}
+		}
+		if(contains == true) {
+			return false;
+		}*/
 		return true;
 	}
 	

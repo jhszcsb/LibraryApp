@@ -55,6 +55,11 @@ public class RentalFacade extends AbstractFacade<Rental> {
 		return em.find(Rental.class, rental.getId());
 	}
 	
+	@RolesAllowed({Users.CUSTOMER, Users.ADMIN})
+	public Rental find(Object id) {
+		return super.find(id);
+	}
+	
 	@RolesAllowed({Users.ADMIN})
 	public void delete(Rental rental) {
 		Rental toBeDeleted = find(rental);
