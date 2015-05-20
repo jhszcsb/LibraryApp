@@ -16,14 +16,14 @@
 -add more test data									[DONE]
 -rename Find Books to Books							[DONE]
 -remove ROLES column from table USERS				[DONE]
--add ui:composition for duplicated xhtmls			
+-remove unused xhtmls								[DONE]
 -fix navigation after login							
 -add error/info messages - jsf faces messages		
--remove inline CSS styles							
+-add ui:composition for duplicated xhtmls			
+-remove inline CSS styles (menu)					
 -add hashed passwords								
--add password validator(matching+strength)			
+-add password validator (matching+strength)			
 -remove "debug" lines from code						
 -remove "todo" lines from code						
 -maybe find a better name for Users entity			
 -maybe refactor SecurityBean usage					
--remove unused xhtmls								

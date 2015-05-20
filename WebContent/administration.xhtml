@@ -8,6 +8,7 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/libraryapp.css" rel="stylesheet" />
 	<title>Main Page</title>
 </h:head>
 
@@ -15,12 +16,12 @@
 
 	 <ui:include src="menu.xhtml" />
 	 
-	 <div style="width:1000px; height:800px; border:solid; border-width:5px">
+	 <div id="administration">
 	 	<h2>Administration</h2>
 	 	<br/><br/>
 	 	<h4>Rentals</h4>
 	 	<h:form>
-	 		<div style="height:250px; width:750px; overflow:auto;">
+	 		<div id="rentals">
 			 	<h:dataTable value="#{rentalController.items}" var="item"
 			 				styleClass="table table-striped table-bordered">
 			 		<h:column>
@@ -67,7 +68,7 @@
 			</div>
 			
 	 		<h4>Users</h4>
-	 		<div style="height:250px; width:350px; overflow:auto;">
+	 		<div id="users">
 		 		<h:dataTable value="#{userController.items}" var="item"
 		 					styleClass="table table-striped table-bordered">
 		 			<h:column>

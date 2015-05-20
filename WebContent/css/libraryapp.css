@@ -1,0 +1,39 @@
+#about {
+	width:1000px; height: 500px; border:solid; border-width:5px
+}
+
+#administration {
+	width:1000px; height:800px; border:solid; border-width:5px
+}
+
+#rentals {
+	height:250px; width:750px; overflow:auto;
+}
+
+#users {
+	height:250px; width:350px; overflow:auto;
+}
+
+#books {
+	width:1000px; height: 500px; border:solid; border-width:5px
+}
+
+#menu {
+	font-size:1.5em;
+}
+
+#myRentals {
+	width:1000px; height: 500px; border:solid; border-width:5px
+}
+
+#profile {
+	width:1000px; height: 500px; border:solid; border-width:5px
+}
+
+#uploadBook{
+	width:1000px; height: 500px; border:solid; border-width:5px
+}
+
+#logout, #loggedInAs {
+	padding: 10px 10px 10px 10px; float:right;
+}
