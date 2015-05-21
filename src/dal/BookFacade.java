@@ -1,6 +1,5 @@
 package dal;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.security.DeclareRoles;
@@ -52,14 +51,9 @@ public class BookFacade extends AbstractFacade<Book> {
 
 	@PermitAll
 	public List<Book> search(String searchField) {
-		// TODO: use named query?
-		// TODO: fix query to search parts of words
+		// use named query?
 		String query = "from Book b where b.title like :title or b.author like :author";
-		List<Book> result = em.createQuery(query).setParameter("title", searchField).setParameter("author", searchField).getResultList();
-		
-		if(!result.isEmpty()) {															// debug
-			System.out.println(result.get(0).getAuthor() + result.get(0).getTitle());	// debug
-		}																				// debug
+		List<Book> result = em.createQuery(query).setParameter("title", "%" + searchField + "%").setParameter("author", "%" + searchField + "%").getResultList();		
 		return result;
 	}
 

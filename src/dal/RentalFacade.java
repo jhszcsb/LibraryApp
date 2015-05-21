@@ -44,7 +44,7 @@ public class RentalFacade extends AbstractFacade<Rental> {
 
 	@RolesAllowed({Users.CUSTOMER, Users.ADMIN})
 	public List<Rental> findForCustomer(String userName) {
-		// TODO: use named query?
+		// use named query?
 		String query = "from Rental r where r.users.name = :userName";
 		List<Rental> result = em.createQuery(query).setParameter("userName", userName).getResultList();		
 		return result;
@@ -65,5 +65,12 @@ public class RentalFacade extends AbstractFacade<Rental> {
 		Rental toBeDeleted = find(rental);
 		em.remove(toBeDeleted);
 	}
+
+	/*@RolesAllowed({Users.CUSTOMER, Users.ADMIN})
+	public Rental findByBookId(int id) {
+		String query = "from Rental r where r.book.bookid = :id";
+		Rental result = (Rental) em.createQuery(query).setParameter("id", id).getSingleResult();	
+		return result;
+	}*/
 
 }

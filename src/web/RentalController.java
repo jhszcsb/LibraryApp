@@ -9,6 +9,7 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Named;
 
+import dal.BookFacade;
 import dal.RentalFacade;
 import dal.UserFacade;
 import entity.Book;
@@ -63,20 +64,26 @@ public class RentalController implements Serializable {
 	}
 	
 	public boolean isNotRented(int id) {
+		return true;
 		// TODO: implement -> does the current user have an ongoing rental for this book?
 		/*SecurityBean sec = new SecurityBean();
-		DataModel<Rental> list = new ListDataModel<Rental>(facade.findForCustomer(sec.getUserName()));
+		DataModel<Rental> listOfCurrentCustomersRentals = new ListDataModel<Rental>(facade.findForCustomer(sec.getUserName()));
 		boolean contains = false;
-		String reuestedRentalTitle = facade.find(id).getBook().getTitle();
-		for(Rental r : list) {
-			if(r.getBook().getTitle().equalsIgnoreCase(reuestedRentalTitle)) {
+		System.out.println(id);
+		Book bookToBeChecked = null;
+		BookFacade bookFacade = new BookFacade();
+		bookToBeChecked = bookFacade.find(id);
+		System.out.println(bookToBeChecked.getTitle());*/
+		/*
+		for(Rental r : listOfCurrentCustomersRentals) {
+			if(r.getBook().getTitle().equalsIgnoreCase(titleOfRequestedRental)) {
 				contains = true;
 			}
 		}
 		if(contains == true) {
 			return false;
-		}*/
-		return true;
+		}
+		return true;*/
 	}
 	
 	public void changeStatusToReceivable(Rental item) {
@@ -105,19 +112,19 @@ public class RentalController implements Serializable {
 	}
 	
 	public boolean isRequested(Rental item) {
-		return item.getStatus().equals("REQUESTED");	// TODO: get the status from enum
+		return item.getStatus().equals(Status.REQUESTED.getValue());
 	}
 	
 	public boolean isReceivable(Rental item) {
-		return item.getStatus().equals("RECEIVABLE");
+		return item.getStatus().equals(Status.RECEIVABLE.getValue());
 	}
 	
 	public boolean isRented(Rental item) {
-		return item.getStatus().equals("RENTED");
+		return item.getStatus().equals(Status.RENTED.getValue());
 	}
 	
 	public void deleteRental(Rental item) {
-		facade.delete(item);							// TODO: implement
+		facade.delete(item);
 	}
 
 }

@@ -22,10 +22,10 @@
 	 	<h:form>
 			<h:messages />
 			<h:outputText value="Enter New Password" />
-			<h:inputSecret value="#{userController.current.password}" />
+			<h:inputSecret value="#{userController.edit.password}" />
 			<br/>
 			<h:outputText value="Repeat Password" />
-			<h:inputSecret value="#{userController.current.password}" />
+			<h:inputSecret value="#{userController.edit.password}" />
 			<br/>
 			<h:commandButton action="#{userController.changePassword()}" value="Change Password" />
 		</h:form>

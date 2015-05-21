@@ -7,23 +7,25 @@
 -create rental for logged in user					[DONE]
 -fix DB id fields/autogeneration					[DONE]
 -set authentication/authorization for all methods	[DONE]
--add web service									
+-add web service									[DONE]
+-add web service client								[DONE]
+-fix problems with repeated entity saving			[DONE]
 -add file upload for books							
--implement automatic page reload					
-	(causes problems with repeated entity saving)
+-implement book detail editing						
 
 --== Other TODO ==--
 -add more test data									[DONE]
 -rename Find Books to Books							[DONE]
 -remove ROLES column from table USERS				[DONE]
 -remove unused xhtmls								[DONE]
+-remove "debug" lines from code						[DONE]
 -fix navigation after login							
+-check scrollability for all datatables				
 -add error/info messages - jsf faces messages		
 -add ui:composition for duplicated xhtmls			
 -remove inline CSS styles (menu)					
 -add hashed passwords								
--add password validator (matching+strength)			
--remove "debug" lines from code						
+-add password validator (matching)					
 -remove "todo" lines from code						
--maybe find a better name for Users entity			
--maybe refactor SecurityBean usage					
+-find a better name for Users entity			
+-refactor SecurityBean usage					

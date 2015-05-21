@@ -1,13 +1,13 @@
 #about {
-	width:1000px; height: 500px; border:solid; border-width:5px
+	width:1000px; height: 500px; border:solid; border-width:3px
 }
 
 #administration {
-	width:1000px; height:800px; border:solid; border-width:5px
+	width:1000px; height:800px; border:solid; border-width:3px
 }
 
 #rentals {
-	height:250px; width:750px; overflow:auto;
+	height:250px; width:900px; overflow:auto;
 }
 
 #users {
@@ -15,7 +15,7 @@
 }
 
 #books {
-	width:1000px; height: 500px; border:solid; border-width:5px
+	width:1000px; height: 500px; border:solid; border-width:3px
 }
 
 #menu {
@@ -23,15 +23,15 @@
 }
 
 #myRentals {
-	width:1000px; height: 500px; border:solid; border-width:5px
+	width:1000px; height: 500px; border:solid; border-width:3px
 }
 
 #profile {
-	width:1000px; height: 500px; border:solid; border-width:5px
+	width:1000px; height: 500px; border:solid; border-width:3px
 }
 
 #uploadBook{
-	width:1000px; height: 500px; border:solid; border-width:5px
+	width:1000px; height: 500px; border:solid; border-width:3px
 }
 
 #logout, #loggedInAs {

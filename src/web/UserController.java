@@ -21,6 +21,8 @@ public class UserController implements Serializable {
 	
 	private Users current;
 	
+	private Users edit;
+	
 	// this is probably not needed for the Users, as there is no functionality need for listing all users...
 	private DataModel<Users> items = null;
 	
@@ -41,6 +43,16 @@ public class UserController implements Serializable {
 		this.current = current;
 	}
 	
+	public Users getEdit() {
+		if (edit == null)
+			edit = new Users();
+		return edit;
+	}
+
+	public void setEdit(Users edit) {
+		this.edit = edit;
+	}
+	
 	public DataModel<Users> getItems() {
 		if (items == null)
 			items = new ListDataModel<Users>(facade.findAll());
@@ -56,7 +68,6 @@ public class UserController implements Serializable {
 		Users user1 = new Users();
 		user1.setName("Csabi");
 		dummy.add(user1);
-		
 		return dummy;
 	}
 	
@@ -77,18 +88,17 @@ public class UserController implements Serializable {
 	}
 	
 	public String save() {
-		System.out.println("Name: " + current.getName());			// debug
-		System.out.println("Password: " + current.getPassword());	// debug
-		System.out.println("Roles: " + current.getRoles());			// debug
 		facade.create(current);
-
 		FacesUtil.addInfoMessage("Registration successfully completed");
-
+		current = null;
 		return "login.xhtml";
 	}
 	
 	public void changePassword() {
-		// TODO: implement
+		setCurrent(facade.getLoggedInUser());
+		current.setPassword(edit.getPassword());
+		facade.edit(current);
+		FacesUtil.addInfoMessage("Password changed!");
 	}
 
 }
