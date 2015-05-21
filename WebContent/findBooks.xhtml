@@ -20,6 +20,8 @@
 	 	<h2>Books</h2>
 	 	
 	 	<h:form>
+	 		<h:commandButton action="#{bookController.reload()}" value="Refresh List" />
+	 		<br/>
 		 	<h:outputLabel value="Search Books by title or author " />
 		 	<h:inputText value="#{bookController.searchField}" />
 		 	<h:commandButton action="#{bookController.find()}" value="Find" />

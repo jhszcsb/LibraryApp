@@ -133,5 +133,17 @@ public class RentalController implements Serializable {
 	public void deleteRental(Rental item) {
 		facade.delete(item);
 	}
+	
+	public void reload() {
+		SecurityBean sec = new SecurityBean();
+		if (items == null){
+			if(sec.isCustomer()) {
+				items = new ListDataModel<Rental>(facade.findForCustomer(sec.getUserName()));
+			}
+			else {
+				items = new ListDataModel<Rental>(facade.findAll());
+			}
+		}
+	}
 
 }

@@ -21,6 +21,7 @@
 	 	<br/><br/>
 	 	<h4>Rentals</h4>
 	 	<h:form>
+	 		
 	 		<div id="rentals">
 			 	<h:dataTable value="#{rentalController.items}" var="item"
 			 				styleClass="table table-striped table-bordered">
@@ -81,6 +82,7 @@
 			
 	 		<h4>Users</h4>
 	 		<div id="users">
+	 			<h:commandButton action="#{userController.reload()}" value="Refresh Table" />
 		 		<h:dataTable value="#{userController.items}" var="item"
 		 					styleClass="table table-striped table-bordered">
 		 			<h:column>

@@ -105,5 +105,9 @@ public class UserController implements Serializable {
 	public void deleteUser(Users item) {
 		facade.remove(item);
 	}
+	
+	public void reload() {
+		items = new ListDataModel<Users>(facade.findAll());
+	}
 
 }

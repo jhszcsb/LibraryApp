@@ -96,5 +96,9 @@ public class BookController implements Serializable {
 		facade.edit(current);
 		FacesUtil.addInfoMessage("Book successfully updated");
 	}
+	
+	public void reload() {
+		items = new ListDataModel<Book>(facade.findAll());
+	}
 
 }
