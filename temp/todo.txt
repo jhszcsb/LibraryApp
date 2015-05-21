@@ -12,6 +12,8 @@
 -fix problems with repeated entity saving			[DONE]
 -implement book availablecopies decrease/inrease	[DONE]
 -implement book detail editing						[DONE]
+-add rental date to gui table						[DONE]
+-add dates to createrental							[DONE]
 -add file upload for books							
 
 --== Other TODO ==--
@@ -28,5 +30,6 @@
 -add hashed passwords								
 -add password validator (matching)					
 -remove "todo" lines from code						
--find a better name for Users entity			
--refactor SecurityBean usage					
+-find a better name for Users entity				
+-refactor SecurityBean usage						
+-implement promotion to admin functionality			

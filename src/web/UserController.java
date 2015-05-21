@@ -11,6 +11,7 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Named;
 
 import dal.UserFacade;
+import entity.Rental;
 import entity.Users;
 
 @Named("userController")
@@ -99,6 +100,10 @@ public class UserController implements Serializable {
 		current.setPassword(edit.getPassword());
 		facade.edit(current);
 		FacesUtil.addInfoMessage("Password changed!");
+	}
+	
+	public void deleteUser(Users item) {
+		facade.remove(item);
 	}
 
 }

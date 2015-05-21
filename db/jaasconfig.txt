@@ -1,16 +1,4 @@
-Old:
-
-<security-domain name="jdbc-security-domain" cache-type="default">
-                    <authentication>
-                        <login-module code="Database" flag="required">
-                            <module-option name="dsJndiName" value="java:jboss/datasources/Derby"/>
-                            <module-option name="principalsQuery" value="select password as Password from USERS where name = ?"/>
-                            <module-option name="rolesQuery" value="select roles as Role, 'Roles' as RoleGroup from USERS where name = ?"/>
-                        </login-module>
-                    </authentication>
-                </security-domain>
-                
-New config for separate role table:
+Config for separate role table:
 
 <security-domain name="jdbc-security-domain" cache-type="default">
                 <authentication>
@@ -24,5 +12,5 @@ New config for separate role table:
             
             
             
-                            <module-option name="hashAlgorithm" value="SHA-256"/>
-                            <module-option name="hashEncoding" value="base64"/>
+<module-option name="hashAlgorithm" value="SHA-256"/>
+<module-option name="hashEncoding" value="base64"/>

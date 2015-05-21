@@ -1,6 +1,7 @@
 package web;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.ejb.EJB;
@@ -58,7 +59,11 @@ public class RentalController implements Serializable {
 		}
 		Rental newRental = new Rental();
 		newRental.setRentaldate(new Date());
-		newRental.setReturndate(new Date());
+		Date returnDate = new Date();
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(returnDate);
+		cal.add(Calendar.MONTH, 1);
+		newRental.setReturndate(cal.getTime());
 		newRental.setStatus(Status.REQUESTED.getValue());
 		newRental.setBook(book);
 		Users currentUser = userFacade.getLoggedInUser();

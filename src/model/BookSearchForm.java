@@ -1,8 +1,5 @@
 package model;
 
-import javax.annotation.ManagedBean;
-
-//@ManagedBean
 public class BookSearchForm {
 	
 	private String title;

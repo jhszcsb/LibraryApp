@@ -48,13 +48,6 @@
 					</f:facet>
 					<h:outputText value="#{item.availablecopies}" />
 				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Image" />
-					</f:facet>
-					<!-- TODO: fix image displaying (ClassCastException) -->
-					<!-- <h:graphicImage value="#{item.image}" /> -->
-				</h:column>
 				<h:column rendered="#{securityBean.customer}">
 					<h:commandButton action="#{rentalController.createRental(item)}" value="Send Rent Request" 
 									rendered="#{rentalController.isNotRented(item.id)}"/>

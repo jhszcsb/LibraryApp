@@ -56,7 +56,6 @@ public class BookController implements Serializable {
 		else {
 			items = new ListDataModel<Book>(facade.search(searchField));
 		}
-		//return null;
 	}
 	
 	public DataModel<Book> getItems() {

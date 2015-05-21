@@ -50,6 +50,18 @@
 					</h:column>
 					<h:column>
 						<f:facet name="header">
+							<h:outputText value="Rental Date" />
+						</f:facet>
+						<h:outputText value="#{item.rentaldate}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Return Date" />
+						</f:facet>
+						<h:outputText value="#{item.returndate}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
 							<h:outputText value="Action" />
 						</f:facet>
 						<h:commandButton action="#{rentalController.changeStatusToReceivable(item)}" value="Approve Request" 
@@ -87,7 +99,7 @@
 						<f:facet name="header">
 							<h:outputText value="Action" />
 						</f:facet>
-						<h:commandButton action="#{a}" value="Delete User" />
+						<h:commandButton action="#{userController.deleteUser(item)}" value="Delete User" />
 					</h:column>
 		 		</h:dataTable>
 	 		</div>
