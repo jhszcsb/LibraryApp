@@ -10,6 +10,7 @@
 -add web service									[DONE]
 -add web service client								[DONE]
 -fix problems with repeated entity saving			[DONE]
+-implement book availablecopies decrease/inrease	[DONE]
 -add file upload for books							
 -implement book detail editing						
 

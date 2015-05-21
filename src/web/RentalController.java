@@ -31,6 +31,9 @@ public class RentalController implements Serializable {
 	@EJB
 	private UserFacade userFacade;
 	
+	@EJB
+	private BookFacade bookFacade;
+	
 	public DataModel<Rental> getItems() {
 		SecurityBean sec = new SecurityBean();
 		if (items == null){
@@ -93,11 +96,13 @@ public class RentalController implements Serializable {
 	
 	public void changeStatusToRented(Rental item) {
 		item.setStatus(Status.RENTED.getValue());
+		decreaseNumberOfAvailableCopies(item.getBook());
 		facade.edit(item);
 	}
 	
 	public void changeStatusToReturned(Rental item) {
 		item.setStatus(Status.RETURNED.getValue());
+		increaseNumberOfAvailableCopies(item.getBook());
 		facade.edit(item);
 	}
 	
@@ -125,6 +130,21 @@ public class RentalController implements Serializable {
 	
 	public void deleteRental(Rental item) {
 		facade.delete(item);
+	}
+	
+	private void decreaseNumberOfAvailableCopies(Book book) {
+		if(book.getAvailablecopies() >= 0) {
+			book.setAvailablecopies((book.getAvailablecopies() - 1));
+			bookFacade.edit(book);
+		}
+		else {
+			// error message
+		}
+	}
+	
+	private void increaseNumberOfAvailableCopies(Book book) {
+		book.setAvailablecopies((book.getAvailablecopies() + 1));
+		bookFacade.edit(book);
 	}
 
 }

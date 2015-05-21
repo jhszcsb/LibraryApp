@@ -65,6 +65,18 @@ public class RentalFacade extends AbstractFacade<Rental> {
 		Rental toBeDeleted = find(rental);
 		em.remove(toBeDeleted);
 	}
+	
+	@RolesAllowed({Users.CUSTOMER})
+	@Override
+	public void create(Rental rental) {
+		super.create(rental);
+	}
+	
+	@RolesAllowed({Users.ADMIN})
+	@Override
+	public void edit(Rental rental) {
+		super.edit(rental);
+	}
 
 	/*@RolesAllowed({Users.CUSTOMER, Users.ADMIN})
 	public Rental findByBookId(int id) {

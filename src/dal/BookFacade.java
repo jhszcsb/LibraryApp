@@ -56,5 +56,11 @@ public class BookFacade extends AbstractFacade<Book> {
 		List<Book> result = em.createQuery(query).setParameter("title", "%" + searchField + "%").setParameter("author", "%" + searchField + "%").getResultList();		
 		return result;
 	}
+	
+	@Override
+	@RolesAllowed({Users.ADMIN})
+	public void edit(Book entity) {
+		super.edit(entity);
+	}
 
 }
