@@ -19,6 +19,8 @@ public class BookController implements Serializable {
 	
 	private Book current;
 	
+	private Book edit;
+	
 	private DataModel<Book> items = null;
 	
 	private String searchField;
@@ -34,6 +36,16 @@ public class BookController implements Serializable {
 
 	public void setCurrent(Book current) {
 		this.current = current;
+	}
+	
+	public Book getEdit() {
+		if (edit == null)
+			edit = new Book();
+		return edit;
+	}
+
+	public void setEdit(Book edit) {
+		this.edit = edit;
 	}
 	
 	public void find() {
@@ -70,6 +82,20 @@ public class BookController implements Serializable {
 		FacesUtil.addInfoMessage("Book successfully saved");
 		current = null;
 		return "findBooks.xhtml";
+	}
+	
+	public String edit(Book item) {
+		setCurrent(item);
+		return "editBook";
+	}
+	
+	public void editNewData() {
+		current.setAuthor(edit.getAuthor());
+		current.setTitle(edit.getTitle());
+		current.setAvailablecopies(edit.getAvailablecopies());
+		current.setGenre(edit.getGenre());
+		facade.edit(current);
+		FacesUtil.addInfoMessage("Book successfully updated");
 	}
 
 }

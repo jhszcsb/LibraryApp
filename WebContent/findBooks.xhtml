@@ -59,6 +59,12 @@
 					<h:commandButton action="#{rentalController.createRental(item)}" value="Send Rent Request" 
 									rendered="#{rentalController.isNotRented(item.id)}"/>
 				</h:column>
+				<h:column rendered="#{securityBean.admin}">
+					<f:facet name="header">
+						<h:outputText value="Action" />
+					</f:facet>
+					<h:commandButton action="#{bookController.edit(item)}" value="Edit Book" />
+				</h:column>
 			</h:dataTable>
 	 	</h:form>
 	 </div>
