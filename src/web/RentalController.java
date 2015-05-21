@@ -10,6 +10,7 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Named;
 
+import business.AdministrationBean;
 import dal.BookFacade;
 import dal.RentalFacade;
 import dal.UserFacade;
@@ -34,6 +35,9 @@ public class RentalController implements Serializable {
 	
 	@EJB
 	private BookFacade bookFacade;
+	
+	@EJB
+	AdministrationBean administrationBean;
 	
 	public DataModel<Rental> getItems() {
 		SecurityBean sec = new SecurityBean();
@@ -95,30 +99,23 @@ public class RentalController implements Serializable {
 	}
 	
 	public void changeStatusToReceivable(Rental item) {
-		item.setStatus(Status.RECEIVABLE.getValue());
-		facade.edit(item);
+		administrationBean.changeStatusToReceivable(item);
 	}
 	
 	public void changeStatusToRented(Rental item) {
-		item.setStatus(Status.RENTED.getValue());
-		decreaseNumberOfAvailableCopies(item.getBook());
-		facade.edit(item);
+		administrationBean.changeStatusToRented(item);
 	}
 	
 	public void changeStatusToReturned(Rental item) {
-		item.setStatus(Status.RETURNED.getValue());
-		increaseNumberOfAvailableCopies(item.getBook());
-		facade.edit(item);
+		administrationBean.changeStatusToReturned(item);
 	}
 	
 	public void changeStatusToExpired(Rental item) {
-		item.setStatus(Status.EXPIRED.getValue());
-		facade.edit(item);
+		administrationBean.changeStatusToExpired(item);
 	}
 	
 	public void changeStatusToRejected(Rental item) {
-		item.setStatus(Status.REJECTED.getValue());
-		facade.edit(item);
+		administrationBean.changeStatusToRejected(item);
 	}
 	
 	public boolean isRequested(Rental item) {
@@ -135,21 +132,6 @@ public class RentalController implements Serializable {
 	
 	public void deleteRental(Rental item) {
 		facade.delete(item);
-	}
-	
-	private void decreaseNumberOfAvailableCopies(Book book) {
-		if(book.getAvailablecopies() >= 0) {
-			book.setAvailablecopies((book.getAvailablecopies() - 1));
-			bookFacade.edit(book);
-		}
-		else {
-			// error message
-		}
-	}
-	
-	private void increaseNumberOfAvailableCopies(Book book) {
-		book.setAvailablecopies((book.getAvailablecopies() + 1));
-		bookFacade.edit(book);
 	}
 
 }
