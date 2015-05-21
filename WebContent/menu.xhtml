@@ -14,36 +14,35 @@
 <h:body>
 
 	<div id="menu">
-		<h:form>
+		<h:form id="menuForm">
 			<h1>LibraryApp Demo</h1>
-			<h:commandLink style="padding: 10px 10px 10px 10px; float:right;" 
+			<h:commandLink id="logoutLink"
 							action="#{securityBean.logout()}" 
 							value="Log Out" />
-			<h4 style="float:right; padding:10px 10px 10px 10px;">Logged in as #{securityBean.userName}</h4>
+			<h4 id="loggedInAs">Logged in as #{securityBean.userName}</h4>
 			
-			<h:outputLabel style="padding: 10px 10px 10px 10px;" 
+			<h:outputLabel id="mainMenu"
 						  	value="Main Menu:" />
-			<h:commandLink style="padding: 10px 10px 10px 10px;" 
+			<h:commandLink id="findBooks" 
 							action="#{navigationController.findBooks()}" 
 							value="Books" />
-			<h:commandLink style="padding: 10px 10px 10px 10px;" 
+			<h:commandLink id="myRentals" 
 							action="#{navigationController.myRentals()}" 
 							value="My Rentals"
 							rendered="#{securityBean.customer}" />
-			<h:commandLink style="padding: 10px 10px 10px 10px;" 
+			<h:commandLink id="administration"
 							action="#{navigationController.administration()}"
 							 value="Administration" 
 							 rendered="#{securityBean.admin}" />
-			<h:commandLink style="padding: 10px 10px 10px 10px;" 
+			<h:commandLink id="profile"
 							action="#{navigationController.profile()}" 
 							value="Profile" />
-			<h:commandLink style="padding: 10px 10px 10px 10px;" 
+			<h:commandLink id="about"
 							action="#{navigationController.about()}" 
 							value="About" />
 		</h:form>
 	</div>
 	
-			
 </h:body>
 
 </html>

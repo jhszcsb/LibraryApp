@@ -34,6 +34,35 @@
 	width:1000px; height: 500px; border:solid; border-width:3px
 }
 
-#logout, #loggedInAs {
+#loggedInAs {
+	padding:10px 10px 10px 10px; float:right;
+}
+
+#menuForm\:logoutLink {
 	padding: 10px 10px 10px 10px; float:right;
 }
+
+#menuForm\:mainMenu {
+	padding: 10px 10px 10px 10px;
+}
+
+#menuForm\:findBooks {
+	padding: 10px 10px 10px 10px;
+}
+
+#menuForm\:myRentals {
+	padding: 10px 10px 10px 10px;
+}
+
+#menuForm\:administration {
+	padding: 10px 10px 10px 10px;
+}
+
+#menuForm\:profile {
+	padding: 10px 10px 10px 10px;
+}
+
+#menuForm\:about {
+	padding: 10px 10px 10px 10px;
+}
+

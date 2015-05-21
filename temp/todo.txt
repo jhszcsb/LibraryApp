@@ -19,11 +19,11 @@
 -remove ROLES column from table USERS				[DONE]
 -remove unused xhtmls								[DONE]
 -remove "debug" lines from code						[DONE]
+-remove inline CSS styles 							[DONE]
 -fix navigation after login							
 -check scrollability for all datatables				
 -add error/info messages - jsf faces messages		
 -add ui:composition for duplicated xhtmls			
--remove inline CSS styles (menu)					
 -add hashed passwords								
 -add password validator (matching)					
 -remove "todo" lines from code						
