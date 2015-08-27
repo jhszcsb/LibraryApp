@@ -15,6 +15,9 @@
 -add rental date to gui table						[DONE]
 -add dates to createrental							[DONE]
 -add file upload for books							
+-add input validations								
+-add Timer Service for checking rental expirations	
+-add GUI notifications for rental expirations		
 
 --== Other TODO ==--
 -add more test data									[DONE]
@@ -23,6 +26,7 @@
 -remove unused xhtmls								[DONE]
 -remove "debug" lines from code						[DONE]
 -remove inline CSS styles 							[DONE]
+-fix sessionscope/requestscope problem				
 -fix navigation after login							
 -check scrollability for all datatables				
 -add error/info messages - jsf faces messages		

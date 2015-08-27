@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Named;
@@ -20,7 +20,7 @@ import entity.Users;
 import model.Status;
 
 @Named("rentalController")
-@SessionScoped
+@RequestScoped
 public class RentalController implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

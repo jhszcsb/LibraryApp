@@ -3,7 +3,7 @@ package web;
 import java.io.Serializable;
 
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Named;
@@ -12,7 +12,7 @@ import dal.BookFacade;
 import entity.Book;
 
 @Named("bookController")
-@SessionScoped
+@RequestScoped
 public class BookController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
